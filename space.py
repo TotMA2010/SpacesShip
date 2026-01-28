@@ -5,12 +5,14 @@ def kiiras(lista):
         legnagyobb_ertek = max(lista)
         legnagyobb_helye = lista.index(max(lista))
         lista[legnagyobb_helye] = 0
-        print(f'{szamlalo}. legtöbb születés számú hónap:{legnagyobb_honap}. hónap, ennyi százaleka:{legnagyobb_ertek:.1f}%')
+        print(
+            f'{szamlalo}. legtöbb születés számú hónap:{legnagyobb_honap}. hónap, ennyi százaleka:{legnagyobb_ertek:.1f}%')
         szamlalo += 1
+
 
 def ossze_szamolas(lista):
     szuletesek_szama = len(lista) - 1
-    szuletesi_honapok = ['1','2','3','4','5','6','7','8','9','10','11','12']
+    szuletesi_honapok = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
     szuletesi_szazalek = []
     for honap in szuletesi_honapok:
         honap_szam = lista.count(honap) / szuletesek_szama * 100
@@ -26,5 +28,6 @@ def main():
             adat = adatok[4].split('/')
             szuletesek.append(adat[0])
         ossze_szamolas(szuletesek)
+
 
 main()
